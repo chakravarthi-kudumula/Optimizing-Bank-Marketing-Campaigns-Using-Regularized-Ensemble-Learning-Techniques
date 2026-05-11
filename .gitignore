@@ -1,0 +1,12 @@
+.DS_Store
+marketing/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+data/processed/
+artifacts/
+mlruns/
+mlartifacts/
+mlflow.db
+.matplotlib-cache/

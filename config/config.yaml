@@ -1,0 +1,42 @@
+data:
+  raw_path: data/raw/bank-full.csv
+  processed_dir: data/processed
+  target_column: y
+  test_size: 0.2
+  random_state: 42
+
+features:
+  drop_duration_for_production: true
+  scale_numeric: true
+
+model:
+  name: regularized_xgboost
+  use_smote: false
+  smote_sampling_strategy: 0.5
+  params: {}
+
+artifacts:
+  model_path: artifacts/models/model.joblib
+  metrics_path: artifacts/metrics/metrics.json
+  plots_dir: artifacts/plots
+
+tracking:
+  enabled: true
+  experiment_name: bank-marketing-campaign
+  tracking_uri: sqlite:///mlflow.db
+  run_name: null
+
+comparison:
+  include_tuned_by_default: false
+
+tuning:
+  n_iter: 10
+  cv: 3
+  scoring: roc_auc
+  n_jobs: 1
+
+registry:
+  enabled: true
+  registered_model_name: bank-marketing-subscription-model
+  default_stage: candidate
+  project_tag: bank-marketing-campaign

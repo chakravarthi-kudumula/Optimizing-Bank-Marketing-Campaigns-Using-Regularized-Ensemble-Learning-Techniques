@@ -1,0 +1,9 @@
+[project]
+name = "bank-marketing-campaign"
+version = "0.1.0"
+description = "Production-style ML pipelines for bank marketing campaign subscription prediction."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
